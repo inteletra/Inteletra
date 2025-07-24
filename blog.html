@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Blog - Inteletra AIX Solution</title>
+<meta name="description" content="Latest insights and innovations in AI technology from Inteletra AIX Solution. Stay updated with our blog on Real Estate AI, Legal Tech, and UAE's digital transformation." />
+<meta name="keywords" content="AI blog, technology insights, real estate AI, legal tech, UAE innovation, artificial intelligence news" />
+<meta name="author" content="Inteletra AIX Solution" />
+<meta name="robots" content="index, follow" />
+
+<link rel="canonical" href="https://inteletra-aix.com/blog" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    /* Apple-inspired color palette */
+    --apple-blue: #007AFF;
+    --apple-gray: #8E8E93;
+    --apple-light-gray: #F2F2F7;
+    --apple-dark-gray: #1C1C1E;
+    --apple-secondary-gray: #3A3A3C;
+    --apple-tertiary-gray: #48484A;
+    --apple-white: #FFFFFF;
+    --apple-black: #000000;
+    --apple-green: #30D158;
+    --apple-purple: #AF52DE;
+    --apple-orange: #FF9F0A;
+    --apple-red: #FF3B30;
+    
+    /* Typography */
+    --apple-font-large: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --apple-font-text: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
+    /* Light theme variables */
+    --text-primary: var(--apple-black);
+    --text-secondary: var(--apple-gray);
+    --text-accent: var(--apple-blue);
+    --bg-primary: var(--apple-white);
+    --bg-secondary: var(--apple-light-gray);
+    --bg-tertiary: #FBFBFD;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-light: rgba(0, 0, 0, 0.04);
+    --shadow-medium: rgba(0, 0, 0, 0.08);
+    --shadow-heavy: rgba(0, 0, 0, 0.16);
+    
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-2xl: 64px;
+    --spacing-3xl: 96px;
+    
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--apple-font-text);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    font-size: 17px;
+    transition: opacity 0.3s ease;
+  }
+
+  body.dark {
+    --text-primary: var(--apple-white);
+    --text-secondary: var(--apple-gray);
+    --text-accent: var(--apple-blue);
+    --bg-primary: var(--apple-black);
+    --bg-secondary: var(--apple-dark-gray);
+    --bg-tertiary: var(--apple-secondary-gray);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-light: rgba(255, 255, 255, 0.04);
+    --shadow-medium: rgba(255, 255, 255, 0.08);
+    --shadow-heavy: rgba(255, 255, 255, 0.16);
+  }
+
+  /* AI Particles Background */
+  .ai-particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.6;
+  }
+
+  .dark .ai-particles-container {
+    opacity: 0.4;
+  }
+
+  .particle-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Google Translate Widget Styling */
+  #google_translate_element {
+    display: none !important;
+  }
+
+  .goog-te-gadget {
+    display: none !important;
+  }
+
+  .goog-te-banner-frame {
+    display: none !important;
+  }
+
+  .goog-te-menu-value {
+    display: none !important;
+  }
+
+  body {
+    top: 0 !important;
+  }
+
+  .goog-tooltip {
+    display: none !important;
+  }
+
+  .goog-tooltip:hover {
+    display: none !important;
+  }
+
+  .goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Language Toggle */
+  .language-toggle {
+    position: relative;
+  }
+
+  select#lang {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--apple-font-text);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 8px 20px 8px 8px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    line-height: 1.42857;
+    letter-spacing: -0.016em;
+  }
+
+  select#lang:hover {
+    background: rgba(0, 122, 255, 0.1);
+    border-color: var(--apple-blue);
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.15);
+  }
+
+  select#lang:focus {
+    outline: 2px solid var(--apple-blue);
+    outline-offset: -2px;
+  }
+
+  .language-toggle::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid var(--text-secondary);
+    pointer-events: none;
+    transition: all var(--transition-fast);
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 0.5px solid var(--border-color);
+    transition: all var(--transition-smooth);
+    height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .dark header {
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+    height: 44px;
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+
+  .nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: var(--apple-font-text);
+    font-size: 14px;
+    font-weight: 400;
+    transition: all var(--transition-fast);
+    padding: 8px 16px;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: var(--apple-blue);
+    background: rgba(0, 122, 255, 0.08);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: var(--apple-blue);
+    transform: scaleX(0);
+    transition: transform var(--transition-fast);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .nav-link.active {
+    color: var(--apple-blue);
+    background: rgba(0, 122, 255, 0.08);
+  }
+
+  .nav-link.active::after {
+    transform: scaleX(1);
+  }
+
+  .logo {
+    font-family: var(--apple-font-large);
+    font-weight: 600;
+    font-size: 21px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+  }
+
+  .logo:hover {
+    opacity: 0.8;
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Language Toggle */
+  .language-toggle {
+    position: relative;
+  }
+
+  select#lang {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--apple-font-text);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 8px 20px 8px 8px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    line-height: 1.42857;
+    letter-spacing: -0.016em;
+  }
+
+  select#lang:hover {
+    background: rgba(0, 122, 255, 0.1);
+    border-color: var(--apple-blue);
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.15);
+  }
+
+  select#lang:focus {
+    outline: 2px solid var(--apple-blue);
+    outline-offset: -2px;
+  }
+
+  .language-toggle::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid var(--text-secondary);
+    pointer-events: none;
+    transition: all var(--transition-fast);
+  }
+
+  /* Hide Google Translate Bar */
+  .goog-te-banner-frame.skiptranslate {
+    display: none !important;
+  }
+
+  body {
+    top: 0px !important;
+  }
+
+  .goog-te-combo {
+    display: none !important;
+  }
+
+  #google_translate_element {
+    display: none !important;
+  }
+
+  /* Dark Mode Toggle */
+  #toggle {
+    background: var(--apple-blue);
+    border: 1px solid rgba(0, 122, 255, 0.2);
+    color: white;
+    font-family: var(--apple-font-text);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: all var(--transition-smooth);
+  }
+
+  #toggle:hover {
+    background: rgba(0, 122, 255, 0.8);
+  }
+
+  /* Main Content */
+  main {
+    padding-top: 80px;
+    min-height: 100vh;
+  }
+
+  /* Blog Header */
+  .blog-header {
+    text-align: center;
+    padding: 3rem 0;
+    background: var(--bg-secondary);
+  }
+
+  .blog-header h1 {
+    font-family: var(--apple-font-large);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .blog-header p {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Blog Grid */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+
+  .blog-card {
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-smooth);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px var(--shadow-medium);
+  }
+
+  .blog-image {
+    height: 200px;
+    background: linear-gradient(135deg, var(--apple-blue), var(--apple-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+  }
+
+  .blog-content {
+    padding: 1.5rem;
+  }
+
+  .blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .blog-category {
+    background: var(--apple-blue);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .blog-card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+
+  .blog-excerpt {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .read-more {
+    color: var(--apple-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Blog Detail */
+  .blog-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .blog-detail-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .blog-detail h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .blog-detail-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+  }
+
+  .blog-detail-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+  }
+
+  .blog-detail-content h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem 0;
+    color: var(--text-primary);
+  }
+
+  .blog-detail-content h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0.75rem 0;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .blog-detail-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-detail-content ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+
+  .blog-detail-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Back Button */
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--apple-blue);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 122, 255, 0.08);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .back-button:hover {
+    background: rgba(0, 122, 255, 0.15);
+    transform: translateX(-2px);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  /* RTL (Arabic) Language Support */
+  .rtl {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .rtl .header-content {
+    flex-direction: row-reverse;
+  }
+
+  .rtl .header-nav {
+    margin-right: auto;
+    margin-left: 2rem;
+  }
+
+  .rtl .language-toggle::after {
+    right: auto;
+    left: 6px;
+  }
+
+  .rtl .blog-header {
+    text-align: right;
+  }
+
+  .rtl .blog-meta {
+    flex-direction: row-reverse;
+  }
+
+  .rtl .blog-detail-meta {
+    flex-direction: row-reverse;
+  }
+
+  .rtl .back-button {
+    transform: scaleX(-1);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .blog-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .blog-detail {
+      padding: 1rem;
+    }
+
+    .blog-detail h1 {
+      font-size: 2rem;
+    }
+
+    .header-nav {
+      gap: 1rem;
+      margin-right: 1rem;
+    }
+  }
+</style>
+</head>
+
+<body>
+<!-- AI-Inspired Particle Animation System -->
+<div id="ai-particles" class="ai-particles-container">
+  <canvas id="particleCanvas" class="particle-canvas"></canvas>
+</div>
+
+<header role="banner">
+  <nav class="header-content" role="navigation" aria-label="Main navigation">
+    <a href="javascript:void(0)" onclick="navigateToHome()" class="logo" aria-label="Inteletra AIX Solution">Inteletra AIX</a>
+    <div class="header-nav">
+      <a href="#" class="nav-link" id="nav-about">About Us</a>
+      <a href="#" class="nav-link" id="nav-blog">Blog</a>
+    </div>
+    <div class="header-controls">
+      <div class="language-toggle">
+        <!-- Language selector dropdown -->
+        <select id="lang" aria-label="Select Language" onchange="switchBlogLanguage(this.value);">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+      <button id="toggle" aria-label="Toggle Dark Mode">🌙 Dark</button>
+    </div>
+  </nav>
+</header>
+
+<main role="main">
+  <!-- Blog List View -->
+  <div id="blog-list-view" class="blog-list-view">
+    <section id="blog-header" class="blog-header">
+      <div class="container">
+        <h1 id="blog-title">Latest AI Insights</h1>
+        <p id="blog-subtitle">Exploring the future of AI technology and its impact on UAE industries</p>
+      </div>
+    </section>
+
+    <section class="blog-grid-section">
+      <div class="container">
+        <div id="blog-grid" class="blog-grid">
+          <!-- Blog posts will be dynamically populated here -->
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Blog Detail View -->
+  <div id="blog-detail-view" class="blog-detail-view" style="display: none;">
+    <div class="container">
+      <div class="blog-detail">
+        <a href="#" class="back-button" onclick="showBlogList()" id="back-to-blog-btn">
+          ← Back to Blog
+        </a>
+        
+        <article class="blog-detail-header">
+          <h1 id="detail-title"></h1>
+          <div class="blog-detail-meta">
+            <span id="detail-author"></span>
+            <span id="detail-date"></span>
+            <span id="detail-read-time"></span>
+          </div>
+          <div id="detail-category" class="blog-category"></div>
+        </article>
+
+        <div id="detail-content" class="blog-detail-content">
+          <!-- Blog content will be dynamically populated here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <p>&copy; 2025 Inteletra AIX Solution. All rights reserved. | Innovating AI for the UAE 🇦🇪</p>
+  </div>
+</footer>
+
+<script>
+  // Blog configuration - matches the main config structure
+  const blogConfig = {
+    "navigation": {
+      "backToBlog": "← Back to Blog",
+      "blogPageTitle": "Blog - Inteletra AIX Solution",
+      "byAuthor": "By"
+    },
+    "blog": {
+      "title": "Latest AI Insights",
+      "subtitle": "Exploring the future of AI technology and its impact on UAE industries",
+      "posts": [
+        {
+          "id": "ai-real-estate-uae",
+          "title": "AI Revolution in UAE Real Estate",
+          "excerpt": "Discover how artificial intelligence is transforming property search and investment decisions in the UAE market.",
+          "content": "The UAE real estate market is experiencing a technological revolution, with AI-powered solutions leading the charge. From predictive analytics that forecast market trends to intelligent property matching systems, artificial intelligence is reshaping how we buy, sell, and invest in properties.\n\nOur AI Property Intelligence platform represents the cutting edge of this transformation. By analyzing vast datasets including market trends, location analytics, property features, and user preferences, our system provides unprecedented insights for both investors and homebuyers.\n\n## Key Innovations\n\n**Smart Property Matching**: Our AI algorithms understand user preferences beyond basic criteria, considering lifestyle factors, commute patterns, and future development plans.\n\n**Predictive Market Analysis**: Advanced machine learning models analyze market data to predict price trends, helping investors make informed decisions.\n\n**Automated Valuation**: AI-powered property valuation provides accurate, real-time estimates based on comprehensive market data.\n\n**Virtual Property Tours**: Enhanced with AI-generated insights and recommendations during virtual walkthroughs.\n\n## The Future of Real Estate\n\nThe future of UAE real estate is intelligent, efficient, and personalized. As we continue to innovate, we're not just changing how properties are bought and sold – we're revolutionizing the entire real estate experience.\n\nWith machine learning algorithms that learn from user behavior and market patterns, our platform continuously evolves to provide better matches, more accurate predictions, and deeper insights into the UAE property market.",
+          "author": "Inteletra AIX Solutions",
+          "date": "2025-01-15",
+          "category": "Real Estate AI",
+          "image": "🏢",
+          "readTime": "5 min read",
+          "tags": ["AI", "Real Estate", "UAE", "Technology", "Innovation"]
+        },
+        {
+          "id": "legal-ai-assistant",
+          "title": "Legal AI: Democratizing Access to Law",
+          "excerpt": "How AI-powered legal assistants are making UAE law more accessible to businesses and individuals.",
+          "content": "Access to legal expertise has traditionally been limited by cost and availability. Our AI Legal Advisor is changing this paradigm by democratizing access to legal knowledge and making UAE law more accessible to everyone.\n\nThe legal landscape in the UAE is complex, with federal laws, emirate-specific regulations, and international business considerations. Our AI system has been trained on comprehensive legal databases to provide accurate, contextual legal guidance.\n\n## Transforming Legal Services\n\n**Instant Legal Research**: Our AI can search through thousands of legal documents, cases, and regulations in seconds, providing relevant information for any legal query.\n\n**Document Analysis**: Upload contracts, agreements, or legal documents for AI-powered analysis, highlighting potential issues and providing recommendations.\n\n**Regulatory Compliance**: Stay updated with the latest UAE legal requirements and ensure your business remains compliant across all emirates.\n\n**Multi-language Support**: Legal guidance available in both English and Arabic, ensuring accessibility for all UAE residents.\n\n**Risk Assessment**: AI-powered analysis of legal risks in business decisions, contracts, and transactions.\n\n## Building an Intelligent Legal Ecosystem\n\nOur vision extends beyond simple legal search. We're building an intelligent legal ecosystem that learns from each interaction, continuously improving its ability to provide relevant, accurate legal guidance.\n\nThe future of legal services is AI-augmented, making expert legal knowledge accessible to everyone while supporting legal professionals with powerful research and analysis tools.",
+          "author": "Inteletra AIX Solutions",
+          "date": "2025-01-10",
+          "category": "Legal AI",
+          "image": "⚖️",
+          "readTime": "6 min read",
+          "tags": ["Legal AI", "UAE Law", "Technology", "Access to Justice"]
+        },
+        {
+          "id": "future-ai-uae",
+          "title": "The Future of AI in UAE's Vision 2071",
+          "excerpt": "Exploring how AI innovations align with UAE's long-term vision for technological leadership.",
+          "content": "The UAE's Vision 2071 aims to make the country the world's best by its centennial. At the heart of this ambitious vision lies artificial intelligence – the technology that will drive innovation, economic growth, and societal transformation.\n\nAs contributors to this national mission, Inteletra AIX Solution is developing AI technologies that directly support the UAE's strategic objectives.\n\n## Strategic Alignment with Vision 2071\n\n**Economic Diversification**: Our AI solutions help traditional industries like real estate and legal services embrace digital transformation, creating new economic opportunities.\n\n**Innovation Ecosystem**: We're fostering an environment where AI innovation thrives, collaborating with local universities, government entities, and international partners.\n\n**Human Capital Development**: Our AI tools augment human expertise rather than replace it, creating new opportunities for skill development and career growth.\n\n**Smart Government**: Our legal AI contributes to the UAE's smart government initiatives by making legal processes more efficient and accessible.\n\n**Global Competitiveness**: By developing world-class AI solutions locally, we're positioning the UAE as a global leader in AI innovation.\n\n## Key Focus Areas\n\n### AI Ethics and Governance\nEnsuring responsible AI development that respects privacy and promotes fairness across all applications.\n\n### Industry-Specific Solutions\nDeveloping AI applications tailored to UAE's key economic sectors, from finance to healthcare.\n\n### Talent Development\nTraining local talent to become AI leaders and innovators, supporting the UAE's human capital goals.\n\n### International Collaboration\nPartnering with global AI leaders while maintaining UAE's strategic autonomy and cultural values.\n\n## The Path Forward\n\nThe journey toward Vision 2071 requires bold innovation, strategic thinking, and collaborative effort. We're proud to contribute to this transformative journey, building AI solutions that will define the UAE's technological leadership for generations to come.\n\nBy 2071, the UAE will not just be a consumer of AI technology but a global creator and innovator, setting standards for ethical, effective, and transformative artificial intelligence applications.",
+          "author": "Inteletra AIX Solutions",
+          "date": "2025-01-05",
+          "category": "AI Strategy",
+          "image": "🇦🇪",
+          "readTime": "7 min read",
+          "tags": ["UAE Vision 2071", "AI Strategy", "Innovation", "Future Technology"]
+        }
+      ]
+    }
+  };
+
+  // Store the original English configuration
+  const blogConfigEn = JSON.parse(JSON.stringify(blogConfig)); // Deep copy
+
+  // Arabic blog configuration embedded
+  const blogConfigAr = {
+    "navigation": {
+      "backToBlog": "← العودة إلى المدونة",
+      "blogPageTitle": "المدونة - Inteletra AIX Solution", 
+      "byAuthor": "بواسطة"
+    },
+    "blog": {
+      "title": "أحدث رؤى الذكاء الاصطناعي",
+      "subtitle": "استكشاف مستقبل تقنية الذكاء الاصطناعي وتأثيرها على صناعات دولة الإمارات",
+      "posts": [
+        {
+          "id": "ai-real-estate-uae",
+          "title": "ثورة الذكاء الاصطناعي في العقارات الإماراتية",
+          "excerpt": "اكتشف كيف يحول الذكاء الاصطناعي البحث عن العقارات وقرارات الاستثمار في السوق الإماراتي.",
+          "content": "يشهد سوق العقارات الإماراتي ثورة تقنية حقيقية، حيث تقود حلول الذكاء الاصطناعي هذا التحول. من التحليلات التنبؤية التي تتوقع اتجاهات السوق إلى أنظمة مطابقة العقارات الذكية، يعيد الذكاء الاصطناعي تشكيل طريقة شرائنا وبيعنا واستثمارنا في العقارات.\n\nتمثل منصة ذكاء العقارات بالذكاء الاصطناعي أحدث ما توصلنا إليه في هذا التحول. من خلال تحليل مجموعات البيانات الضخمة بما في ذلك اتجاهات السوق وتحليلات الموقع وخصائص العقارات وتفضيلات المستخدمين، يوفر نظامنا رؤى لا مثيل لها للمستثمرين ومشتري المنازل على حد سواء.\n\n## الابتكارات الرئيسية\n\n**مطابقة العقارات الذكية**: تفهم خوارزمياتنا للذكاء الاصطناعي تفضيلات المستخدمين إلى ما هو أبعد من المعايير الأساسية، مع مراعاة عوامل نمط الحياة وأنماط التنقل وخطط التطوير المستقبلية.\n\n**التحليل التنبؤي للسوق**: تحلل نماذج التعلم الآلي المتقدمة بيانات السوق للتنبؤ باتجاهات الأسعار، مما يساعد المستثمرين على اتخاذ قرارات مدروسة.\n\n**التقييم الآلي**: يوفر تقييم العقارات المدعوم بالذكاء الاصطناعي تقديرات دقيقة في الوقت الفعلي بناءً على بيانات السوق الشاملة.\n\n**الجولات الافتراضية للعقارات**: محسّنة برؤى وتوصيات مولدة بالذكاء الاصطناعي أثناء الجولات الافتراضية.\n\n## مستقبل العقارات\n\nمستقبل العقارات الإماراتية ذكي وفعال ومخصص. ومع استمرارنا في الابتكار، فإننا لا نقوم فقط بتغيير كيفية شراء وبيع العقارات - بل نحدث ثورة في تجربة العقارات بأكملها.\n\nمع خوارزميات التعلم الآلي التي تتعلم من سلوك المستخدم وأنماط السوق، تتطور منصتنا باستمرار لتوفير مطابقات أفضل وتنبؤات أكثر دقة ورؤى أعمق في سوق العقارات الإماراتي.",
+          "author": "Inteletra AIX Solutions",
+          "date": "2025-01-15",
+          "category": "ذكاء اصطناعي للعقارات",
+          "image": "🏢",
+          "readTime": "5 دقائق قراءة",
+          "tags": ["ذكاء اصطناعي", "عقارات", "الإمارات", "تقنية", "ابتكار"]
+        },
+        {
+          "id": "legal-ai-assistant",
+          "title": "الذكاء القانوني: إضفاء الطابع الديمقراطي على الوصول للقانون",
+          "excerpt": "كيف تجعل المساعدين القانونيين المدعومين بالذكاء الاصطناعي قانون دولة الإمارات أكثر إتاحة للشركات والأفراد.",
+          "content": "لطالما كان الوصول للخبرة القانونية محدوداً بالتكلفة والتوفر. يغير مستشارنا القانوني بالذكاء الاصطناعي هذا النموذج من خلال إضفاء الطابع الديمقراطي على الوصول للمعرفة القانونية وجعل قانون دولة الإمارات أكثر إتاحة للجميع.\n\nالمشهد القانوني في دولة الإمارات معقد، مع القوانين الاتحادية واللوائح الخاصة بالإمارات واعتبارات الأعمال الدولية. تم تدريب نظام الذكاء الاصطناعي الخاص بنا على قواعد بيانات قانونية شاملة لتوفير إرشادات قانونية دقيقة وسياقية.\n\n## تحويل الخدمات القانونية\n\n**البحث القانوني الفوري**: يمكن لذكائنا الاصطناعي البحث في آلاف الوثائق القانونية والقضايا واللوائح في ثوانٍ، مما يوفر معلومات ذات صلة لأي استفسار قانوني.\n\n**تحليل الوثائق**: ارفع العقود أو الاتفاقيات أو الوثائق القانونية للحصول على تحليل مدعوم بالذكاء الاصطناعي، مع تسليط الضوء على القضايا المحتملة وتقديم التوصيات.\n\n**الامتثال التنظيمي**: ابق محدثاً بأحدث المتطلبات القانونية الإماراتية وتأكد من بقاء عملك متوافقاً عبر جميع الإمارات.\n\n**الدعم متعدد اللغات**: إرشادات قانونية متاحة باللغتين الإنجليزية والعربية، مما يضمن الوصول لجميع سكان دولة الإمارات.\n\n**تقييم المخاطر**: تحليل مدعوم بالذكاء الاصطناعي للمخاطر القانونية في قرارات الأعمال والعقود والمعاملات.\n\n## بناء نظام قانوني ذكي\n\nرؤيتنا تتجاوز البحث القانوني البسيط. نحن نبني نظاماً قانونياً ذكياً يتعلم من كل تفاعل، محسناً باستمرار قدرته على توفير إرشادات قانونية ذات صلة ودقيقة.\n\nمستقبل الخدمات القانونية معزز بالذكاء الاصطناعي، مما يجعل المعرفة القانونية المتخصصة متاحة للجميع بينما يدعم المهنيين القانونيين بأدوات بحث وتحليل قوية.",
+          "author": "Inteletra AIX Solutions",
+          "date": "2025-01-10",
+          "category": "ذكاء اصطناعي قانوني",
+          "image": "⚖️",
+          "readTime": "6 دقائق قراءة",
+          "tags": ["ذكاء اصطناعي قانوني", "قانون الإمارات", "تقنية", "الوصول للعدالة"]
+        },
+        {
+          "id": "future-ai-uae",
+          "title": "مستقبل الذكاء الاصطناعي في رؤية الإمارات 2071",
+          "excerpt": "استكشاف كيفية تماشي ابتكارات الذكاء الاصطناعي مع الرؤية طويلة المدى لدولة الإمارات للريادة التقنية.",
+          "content": "تهدف رؤية الإمارات 2071 إلى جعل البلاد الأفضل في العالم بحلول الذكرى المئوية لتأسيسها. في قلب هذه الرؤية الطموحة يكمن الذكاء الاصطناعي - التقنية التي ستقود الابتكار والنمو الاقتصادي والتحول المجتمعي.\n\nكمساهمين في هذه المهمة الوطنية، تطور شركة إنتيليترا إيه آي إكس حلول تقنيات الذكاء الاصطناعي التي تدعم بشكل مباشر الأهداف الاستراتيجية لدولة الإمارات.\n\n## التوافق الاستراتيجي مع رؤية 2071\n\n**التنويع الاقتصادي**: تساعد حلول الذكاء الاصطناعي الخاصة بنا الصناعات التقليدية مثل العقارات والخدمات القانونية على احتضان التحول الرقمي، مما يخلق فرصاً اقتصادية جديدة.\n\n**نظام الابتكار البيئي**: نحن نعزز بيئة يزدهر فيها ابتكار الذكاء الاصطناعي، بالتعاون مع الجامعات المحلية والكيانات الحكومية والشركاء الدوليين.\n\n**تنمية رأس المال البشري**: أدوات الذكاء الاصطناعي الخاصة بنا تعزز الخبرة البشرية بدلاً من استبدالها، مما يخلق فرصاً جديدة لتطوير المهارات والنمو المهني.\n\n**الحكومة الذكية**: يساهم ذكاءنا الاصطناعي القانوني في مبادرات الحكومة الذكية في دولة الإمارات من خلال جعل العمليات القانونية أكثر كفاءة وإتاحة.\n\n**القدرة التنافسية العالمية**: من خلال تطوير حلول الذكاء الاصطناعي عالمية المستوى محلياً، نضع دولة الإمارات كرائدة عالمية في ابتكار الذكاء الاصطناعي.\n\n## مجالات التركيز الرئيسية\n\n### أخلاقيات وحوكمة الذكاء الاصطناعي\nضمان تطوير الذكاء الاصطناعي المسؤول الذي يحترم الخصوصية ويعزز العدالة عبر جميع التطبيقات.\n\n### الحلول الخاصة بالصناعة\nتطوير تطبيقات الذكاء الاصطناعي المصممة خصيصاً للقطاعات الاقتصادية الرئيسية في دولة الإمارات، من المالية إلى الرعاية الصحية.\n\n### تنمية المواهب\nتدريب المواهب المحلية لتصبح قادة ومبدعين في الذكاء الاصطناعي، ودعم أهداف رأس المال البشري في دولة الإمارات.\n\n### التعاون الدولي\nالشراكة مع قادة الذكاء الاصطناعي العالميين مع الحفاظ على الاستقلالية الاستراتيجية والقيم الثقافية لدولة الإمارات.\n\n## الطريق إلى الأمام\n\nتتطلب الرحلة نحو رؤية 2071 ابتكاراً جريئاً وتفكيراً استراتيجياً وجهداً تعاونياً. نحن فخورون بالمساهمة في هذه الرحلة التحولية، ببناء حلول الذكاء الاصطناعي التي ستحدد الريادة التقنية لدولة الإمارات لأجيال قادمة.\n\nبحلول عام 2071، لن تكون دولة الإمارات مجرد مستهلكة لتقنية الذكاء الاصطناعي بل مبدعة ومبتكرة عالمية، واضعة معايير لتطبيقات الذكاء الاصطناعي الأخلاقية والفعالة والتحولية.",
+          "author": "Inteletra AIX Solutions",
+          "date": "2025-01-05",
+          "category": "استراتيجية الذكاء الاصطناعي",
+          "image": "🇦🇪",
+          "readTime": "7 دقائق قراءة",
+          "tags": ["رؤية الإمارات 2071", "استراتيجية الذكاء الاصطناعي", "ابتكار", "تقنية المستقبل"]
+        }
+      ]
+    }
+  };
+
+  // Initialize the blog
+  function initializeBlog() {
+    initializeAIParticles();
+    initializeDarkMode();
+    initializeBlogLanguageSystem(); // Use new language system instead of Google Translate
+    initializeNavigation();
+    handleURLRouting();
+  }
+
+  // Initialize navigation with smooth scroll effects
+  function initializeNavigation() {
+    const navAbout = document.getElementById('nav-about');
+    const navBlog = document.getElementById('nav-blog');
+    const siteLogo = document.querySelector('.logo');
+
+    // Function to smooth scroll to a section
+    function scrollToSection(sectionId) {
+      console.log('Scrolling to section:', sectionId);
+      
+      const targetSection = document.getElementById(sectionId) || document.querySelector(`.${sectionId}`);
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      // Remove active class from all nav links
+      navLinks.forEach(link => link.classList.remove('active'));
+      
+      if (targetSection) {
+        // Calculate header height for offset
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 70;
+        
+        // Get the target position
+        const targetPosition = targetSection.offsetTop - headerHeight - 20;
+        
+        // Smooth scroll to target
+        window.scrollTo({
+          top: Math.max(0, targetPosition),
+          behavior: 'smooth'
+        });
+        
+        // Add active class to corresponding nav link
+        if (sectionId === 'blog-header' && navBlog) navBlog.classList.add('active');
+        
+        console.log(`Scrolled to ${sectionId} section`);
+      } else {
+        console.error(`Section ${sectionId} not found`);
+      }
+    }
+
+    // Handle About Us click - navigate to main site
+    if (navAbout) {
+      navAbout.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('About navigation clicked - redirecting to main site');
+        
+        // Add transition effect
+        document.body.style.opacity = '0.7';
+        document.body.style.transition = 'opacity 0.3s ease';
+        
+        setTimeout(() => {
+          const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+          window.location.href = `enhanced_startup_site.html?lang=${currentLang}#about`;
+        }, 150);
+      });
+    }
+
+    // Handle Blog click - scroll to blog header
+    if (navBlog) {
+      navBlog.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Blog navigation clicked');
+        
+        // If we're in detail view, go back to list first
+        if (document.getElementById('blog-detail-view').style.display !== 'none') {
+          showBlogList();
+          setTimeout(() => {
+            scrollToSection('blog-header');
+          }, 100);
+        } else {
+          scrollToSection('blog-header');
+        }
+        
+        navBlog.classList.add('active');
+      });
+    }
+
+    // Handle logo click to return to main site
+    if (siteLogo) {
+      siteLogo.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Logo clicked - redirecting to main site');
+        
+        // Add transition effect
+        document.body.style.opacity = '0.7';
+        document.body.style.transition = 'opacity 0.3s ease';
+        
+        setTimeout(() => {
+          const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+          window.location.href = `enhanced_startup_site.html?lang=${currentLang}`;
+        }, 150);
+      });
+    }
+
+    // Handle hash changes for smooth navigation
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash && hash !== 'post/' && !hash.startsWith('post/')) {
+        scrollToSection(hash);
+      }
+    });
+
+    // Set initial active state
+    const currentHash = window.location.hash;
+    if (currentHash === '#blog' || currentHash === '') {
+      if (navBlog) navBlog.classList.add('active');
+    }
+  }  // Initialize language switching system for blog
+  function initializeBlogLanguageSystem() {
+    console.log('Initializing blog language system...');
+    
+    // Check for language parameter in URL first, then localStorage
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+    const currentLang = urlLang || savedLang;
+    
+    console.log('URL language:', urlLang);
+    console.log('Saved blog language:', savedLang);
+    console.log('Using language:', currentLang);
+    
+    // Update language selector
+    const langSelect = document.getElementById('lang');
+    if (langSelect) {
+      langSelect.value = currentLang;
+      console.log('Blog language selector updated to:', currentLang);
+    }
+    
+    // Load the appropriate config
+    loadBlogLanguageConfig(currentLang);
+  }
+  
+  // Load blog language configuration
+  async function loadBlogLanguageConfig(langCode) {
+    try {
+      console.log(`Loading blog language configuration for: ${langCode}`);
+      
+      let configData;
+      if (langCode === 'ar') {
+        console.log('Loading Arabic blog configuration...');
+        // Use embedded Arabic configuration
+        configData = blogConfigAr;
+        console.log('Arabic blog configuration loaded successfully');
+        
+        // Set page direction and language attributes
+        document.documentElement.dir = 'rtl';
+        document.documentElement.lang = 'ar';
+        document.body.classList.add('rtl');
+        console.log('RTL layout applied');
+      } else {
+        // Use embedded English configuration
+        configData = blogConfigEn;
+        console.log('English blog configuration loaded successfully');
+        
+        // Set page direction and language attributes
+        document.documentElement.dir = 'ltr';
+        document.documentElement.lang = 'en';
+        document.body.classList.remove('rtl');
+        console.log('LTR layout applied');
+      }
+      
+      // Update page title and subtitle
+      const blogTitle = document.getElementById('blog-title');
+      const blogSubtitle = document.getElementById('blog-subtitle');
+      const backToBlogBtn = document.getElementById('back-to-blog-btn');
+      
+      if (blogTitle) blogTitle.textContent = configData.blog.title;
+      if (blogSubtitle) blogSubtitle.textContent = configData.blog.subtitle;
+      if (backToBlogBtn && configData.navigation) {
+        backToBlogBtn.textContent = configData.navigation.backToBlog;
+        console.log('Updated back to blog button to:', configData.navigation.backToBlog);
+      }
+      
+      // Update the global blogConfig completely
+      blogConfig.blog = configData.blog;
+      blogConfig.navigation = configData.navigation;
+      console.log('Blog config updated. Title:', blogConfig.blog.title, 'Posts count:', blogConfig.blog.posts.length);
+      
+      // Re-render blog posts with new language
+      console.log('Re-rendering blog posts...');
+      renderBlogPosts();
+      
+      // If we're currently viewing a blog post detail, refresh it with new language
+      const hash = window.location.hash;
+      if (hash.startsWith('#post/')) {
+        const postId = hash.substring(6);
+        console.log('Refreshing current blog post with new language:', postId);
+        showBlogPost(postId);
+      }
+      
+      // Store selected language
+      localStorage.setItem('selectedLanguage', langCode);
+      
+      console.log(`Blog language successfully switched to: ${langCode}`);
+      
+    } catch (error) {
+      console.error('Error loading blog language configuration:', error);
+      console.error('Error details:', error.message);
+      // Fallback to English if not already English
+      if (langCode !== 'en') {
+        console.log('Falling back to English...');
+        await loadBlogLanguageConfig('en');
+      }
+    }
+  }
+  
+  // Custom language switching function for blog
+  window.switchBlogLanguage = function(langCode) {
+    console.log(`Switching blog language to: ${langCode}`);
+    
+    // Add visual feedback
+    const langSelect = document.getElementById('lang');
+    if (langSelect) {
+      langSelect.value = langCode;
+      langSelect.style.opacity = '0.6';
+      langSelect.disabled = true;
+      
+      // Re-enable after loading
+      setTimeout(() => {
+        langSelect.style.opacity = '1';
+        langSelect.disabled = false;
+      }, 500);
+    }
+    
+    // Load the appropriate language config
+    loadBlogLanguageConfig(langCode);
+  };
+
+  // Function to navigate to home with preserved language
+  window.navigateToHome = function() {
+    const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+    window.location.href = `enhanced_startup_site.html?lang=${currentLang}`;
+  };
+  
+  // Function to navigate back to main page with preserved language
+  window.navigateToHome = function() {
+    const currentLang = localStorage.getItem('selectedLanguage') || 'en';
+    window.location.href = `enhanced_startup_site.html?lang=${currentLang}`;
+  };
+
+  // Render blog posts
+  function renderBlogPosts() {
+    console.log('renderBlogPosts called. Current blog config:', blogConfig.blog.title);
+    const blogGrid = document.getElementById('blog-grid');
+    const blogTitle = document.getElementById('blog-title');
+    const blogSubtitle = document.getElementById('blog-subtitle');
+    const backToBlogBtn = document.getElementById('back-to-blog-btn');
+    
+    // Update page title and subtitle
+    if (blogTitle) {
+      blogTitle.textContent = blogConfig.blog.title;
+      console.log('Updated blog title to:', blogConfig.blog.title);
+    }
+    if (blogSubtitle) {
+      blogSubtitle.textContent = blogConfig.blog.subtitle;
+      console.log('Updated blog subtitle to:', blogConfig.blog.subtitle);
+    }
+    if (backToBlogBtn && blogConfig.navigation) {
+      backToBlogBtn.textContent = blogConfig.navigation.backToBlog;
+      console.log('Updated back to blog button to:', blogConfig.navigation.backToBlog);
+    }
+    
+    // Update page title if we're on blog list view
+    if (document.getElementById('blog-list-view').style.display !== 'none') {
+      const pageTitle = blogConfig.navigation?.blogPageTitle || 'Blog - Inteletra AIX Solution';
+      document.getElementById('page-title').textContent = pageTitle;
+      console.log('Updated page title to:', pageTitle);
+    }
+    
+    // Render blog posts
+    if (blogGrid && blogConfig.blog.posts) {
+      blogGrid.innerHTML = blogConfig.blog.posts.map(post => `
+        <a href="#post/${post.id}" class="blog-card" onclick="showBlogPost('${post.id}'); return false;">
+          <div class="blog-image">
+            <div style="font-size: 4rem;">${post.image}</div>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span>${post.date}</span>
+              <span class="blog-category">${post.category}</span>
+            </div>
+            <h2>${post.title}</h2>
+            <p class="blog-excerpt">${post.excerpt}</p>
+            <span class="read-more">${post.readTime} →</span>
+          </div>
+        </a>
+      `).join('');
+    }
+  }
+
+  // Show individual blog post
+  function showBlogPost(postId) {
+    const post = blogConfig.blog.posts.find(p => p.id === postId);
+    if (!post) {
+      console.error('Post not found:', postId);
+      return;
+    }
+
+    console.log('Showing blog post:', post.title);
+
+    // Hide blog list, show detail
+    document.getElementById('blog-list-view').style.display = 'none';
+    document.getElementById('blog-detail-view').style.display = 'block';
+
+    // Update page title with current language
+    const pageTitle = `${post.title} - Inteletra AIX Solution`;
+    document.getElementById('page-title').textContent = pageTitle;
+
+    // Populate detail view with translated labels
+    document.getElementById('detail-title').textContent = post.title;
+    const byText = blogConfig.navigation?.byAuthor || 'By';
+    document.getElementById('detail-author').textContent = `${byText} ${post.author}`;
+    document.getElementById('detail-date').textContent = post.date;
+    document.getElementById('detail-read-time').textContent = post.readTime;
+    document.getElementById('detail-category').textContent = post.category;
+
+    // Convert content (basic markdown support)
+    const content = post.content
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/\n/g, '<br>')
+      .replace(/## (.*?)<\/p>/g, '<h2>$1</h2>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/^\*\*(.*?)\*\*:/gm, '<h3>$1:</h3>');
+
+    document.getElementById('detail-content').innerHTML = `<p>${content}</p>`;
+
+    // Update URL
+    window.history.pushState({}, '', `#post/${postId}`);
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+  }
+
+  // Show blog list
+  function showBlogList() {
+    console.log('Showing blog list');
+    document.getElementById('blog-list-view').style.display = 'block';
+    document.getElementById('blog-detail-view').style.display = 'none';
+    
+    // Use translated page title
+    const pageTitle = blogConfig.navigation?.blogPageTitle || 'Blog - Inteletra AIX Solution';
+    document.getElementById('page-title').textContent = pageTitle;
+    console.log('Page title set to:', pageTitle);
+    
+    window.history.pushState({}, '', '#');
+    window.scrollTo(0, 0);
+  }
+
+  // Handle URL routing
+  function handleURLRouting() {
+    const hash = window.location.hash;
+    if (hash.startsWith('#post/')) {
+      const postId = hash.substring(6);
+      showBlogPost(postId);
+    }
+  }
+
+  // Initialize AI Particles (same as main site)
+  function initializeAIParticles() {
+    const canvas = document.getElementById('particleCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationId;
+    
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    
+    class AIParticle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.5;
+        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.opacity = Math.random() * 0.5 + 0.2;
+        this.pulsePhase = Math.random() * Math.PI * 2;
+        this.type = Math.random() > 0.7 ? 'neural' : 'data';
+      }
+      
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.pulsePhase += 0.02;
+        
+        if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        
+        this.x = Math.max(0, Math.min(canvas.width, this.x));
+        this.y = Math.max(0, Math.min(canvas.height, this.y));
+      }
+      
+      draw() {
+        ctx.save();
+        const pulse = Math.sin(this.pulsePhase) * 0.3 + 0.7;
+        const isDark = document.body.classList.contains('dark');
+        
+        ctx.globalAlpha = this.opacity * pulse * 0.6;
+        
+        if (this.type === 'neural') {
+          ctx.fillStyle = '#007AFF';
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size * pulse, 0, Math.PI * 2);
+          ctx.fill();
+          
+          ctx.globalAlpha = this.opacity * pulse * 0.3;
+          ctx.fillStyle = isDark ? '#00BFFF' : '#87CEEB';
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size * pulse * 0.5, 0, Math.PI * 2);
+          ctx.fill();
+        } else {
+          ctx.fillStyle = isDark ? '#AF52DE' : '#8B5CF6';
+          ctx.fillRect(
+            this.x - this.size/2 * pulse, 
+            this.y - this.size/2 * pulse, 
+            this.size * pulse, 
+            this.size * pulse
+          );
+        }
+        
+        ctx.restore();
+      }
+    }
+    
+    function initParticles() {
+      particles = [];
+      const particleCount = Math.min(40, Math.floor(canvas.width * canvas.height / 20000));
+      
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new AIParticle());
+      }
+    }
+    
+    function drawConnections() {
+      const isDark = document.body.classList.contains('dark');
+      const maxDistance = 120;
+      
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < maxDistance) {
+            const opacity = (1 - distance / maxDistance) * 0.15;
+            
+            ctx.save();
+            ctx.globalAlpha = opacity;
+            ctx.strokeStyle = '#007AFF';
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        }
+      }
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      
+      drawConnections();
+      
+      animationId = requestAnimationFrame(animate);
+    }
+    
+    resizeCanvas();
+    initParticles();
+    animate();
+    
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+    
+    window.addEventListener('beforeunload', () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    });
+  }
+
+  // Initialize dark mode
+  function initializeDarkMode() {
+    const toggleBtn = document.getElementById('toggle');
+    const body = document.body;
+
+    if (!toggleBtn) return;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      toggleBtn.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+      localStorage.setItem('darkMode', isDark);
+    });
+
+    // Load saved preference
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode === 'true') {
+      body.classList.add('dark');
+      toggleBtn.innerHTML = '☀️ Light';
+    }
+  }
+
+  // Handle browser back/forward
+  window.addEventListener('popstate', handleURLRouting);
+
+  // Initialize blog when DOM is ready
+  document.addEventListener('DOMContentLoaded', initializeBlog);
+</script>
+</body>
+</html>
