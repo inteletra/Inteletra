@@ -906,7 +906,7 @@
         
         setTimeout(() => {
           const currentLang = localStorage.getItem('selectedLanguage') || 'en';
-          window.location.href = `enhanced_startup_site.html?lang=${currentLang}#about`;
+          window.location.href = `index.html?lang=${currentLang}#about`;
         }, 150);
       });
     }
@@ -943,7 +943,7 @@
         
         setTimeout(() => {
           const currentLang = localStorage.getItem('selectedLanguage') || 'en';
-          window.location.href = `enhanced_startup_site.html?lang=${currentLang}`;
+          window.location.href = `index.html?lang=${currentLang}`;
         }, 150);
       });
     }
@@ -1085,13 +1085,13 @@
   // Function to navigate to home with preserved language
   window.navigateToHome = function() {
     const currentLang = localStorage.getItem('selectedLanguage') || 'en';
-    window.location.href = `enhanced_startup_site.html?lang=${currentLang}`;
+    window.location.href = `index.html?lang=${currentLang}`;
   };
   
   // Function to navigate back to main page with preserved language
   window.navigateToHome = function() {
     const currentLang = localStorage.getItem('selectedLanguage') || 'en';
-    window.location.href = `enhanced_startup_site.html?lang=${currentLang}`;
+    window.location.href = `index?lang=${currentLang}`;
   };
 
   // Render blog posts
