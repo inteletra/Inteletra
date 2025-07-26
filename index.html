@@ -228,6 +228,68 @@
 </script>
 
 <style>
+  /* Prevent vertical scroll on mobile devices */
+  html, body {
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+  @media (max-width: 900px) {
+    html, body {
+      max-height: 100vh;
+      overflow-y: scroll;
+    }
+    .container {
+      padding: 0 6px !important;
+      max-width: 100vw !important;
+    }
+    .header-content,
+    .header-nav,
+    .header-controls,
+    .hero,
+    .hero-content,
+    .vision-mission,
+    .products,
+    .team,
+    .about,
+    .faq,
+    .blog,
+    footer {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      min-height: unset !important;
+      max-height: 100vh !important;
+      overflow-y: auto !important;
+    }
+    .hero h1, .products h2, .team h2, .about h2, .blog h2, .faq h2 {
+      font-size: 1.3rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    .hero p, .products-subtitle, .team-content p, .about-text p, .blog-subtitle {
+      font-size: 1rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    .products-grid, .team-grid, .about-grid, .blog-grid, .faq-grid {
+      gap: 10px !important;
+    }
+    .section-card, .product-panel, .member, .stat-item, .faq-item, .blog-post {
+      padding: 10px !important;
+      margin-bottom: 8px !important;
+    }
+    .footer-content, .footer-section, .footer-bottom {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    /* Hide scrollbars for mobile */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
   /* Reset & base */
   *, *::before, *::after {
     box-sizing: border-box;
@@ -876,7 +938,8 @@
   /* Apple-style Language Toggle */
   .language-toggle {
     position: relative;
-  }
+    font-family: var(--apple-font-text);
+  }   
 
   select#lang {
     appearance: none;
@@ -965,7 +1028,7 @@
     backdrop-filter: blur(10px) saturate(180%);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     height: 40px;
-    min-width: 100px;
+    min-width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1946,6 +2009,7 @@
     .language-toggle::after {
       right: 6px;
       font-size: 12px;
+      font-family: var(--apple-font);
     }
 
     select#lang {
@@ -2071,6 +2135,76 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+    /* Responsive Header Hamburger */
+    .menu-toggle {
+    display: none;
+  }
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 1rem;
+    z-index: 1200;
+  }
+  .menu-icon span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  @media (max-width: 900px) {
+    .header-content {
+      padding: 0 10px;
+    }
+    .header-nav {
+      position: absolute;
+      top: 44px;
+      left: 0;
+      right: 0;
+      /* background: var(--bg-primary); */
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      margin: 0;
+      width: 100vw;
+      max-width: 100vw;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      z-index: 1100;
+      display: none;
+    }
+    .header-nav .nav-link {
+      width: 100%;
+      padding: 18px 24px;
+      border-radius: 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #eee;
+    }
+    .menu-icon {
+      display: flex;
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .menu-toggle:checked ~ .header-nav {
+      display: flex;
+    }
+    .header-controls {
+      margin-left: auto;
+    }
+  }
 </style>
 </head>
 
@@ -2091,6 +2225,12 @@
 <header role="banner">
   <nav class="header-content" role="navigation" aria-label="Main navigation">
     <a href="#home" class="logo" aria-label="Inteletra AIX Solution" id="site-logo">Inteletra AIX</a>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" />
+    <label for="menu-toggle" class="menu-icon" aria-label="Open navigation menu" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
     <div class="header-nav">
       <a href="#about" class="nav-link" id="nav-about">About Us</a>
       <a href="#blog" class="nav-link" id="nav-blog">Blog</a>
@@ -2103,9 +2243,10 @@
           <option value="ar">العربية</option>
         </select>
       </div>
-      <button id="toggle" aria-label="Toggle Dark Mode">🌙 Dark</button>
+      <button id="toggle" aria-label="Toggle Dark Mode">🌙</button>
     </div>
   </nav>
+
 </header>
 
 <main role="main">
@@ -2397,8 +2538,8 @@
     },
     "navigation": {
       "darkModeToggle": {
-        "light": "🌙 Dark",
-        "dark": "☀️ Light"
+        "light": "🌙",
+        "dark": "☀️"
       },
       "languages": [
         {"code": "en", "name": "English"},
@@ -2549,8 +2690,8 @@
     },
     "navigation": {
       "darkModeToggle": {
-        "light": "🌙 الوضع الداكن",
-        "dark": "☀️ الوضع الفاتح"
+        "light": "🌙",
+        "dark": "☀️"
       },
       "languages": [
         {"code": "en", "name": "English"},
@@ -2903,7 +3044,7 @@
         
         if (this.type === 'neural') {
           // Draw neural node - use Apple blue for both modes
-          ctx.fillStyle = '#007AFF';
+          ctx.fillStyle = isDark ? '#87CEEB' : '#007AFF';
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.size * pulse, 0, Math.PI * 2);
           ctx.fill();
@@ -3009,7 +3150,17 @@
 
   function updateContent(lang) {
     const content = config;
-    
+
+    // Update navigation links for About Us and Blog
+    const navAbout = document.getElementById('nav-about');
+    const navBlog = document.getElementById('nav-blog');
+    if (navAbout) {
+      navAbout.textContent = (lang === 'ar') ? 'من نحن' : 'About Us';
+    }
+    if (navBlog) {
+      navBlog.textContent = (lang === 'ar') ? 'مدونة' : 'Blog';
+    }
+
     updateHeroSection(content);
     updateSections(content);
     updateProducts(content);
@@ -3261,7 +3412,7 @@
     toggleBtn.addEventListener('click', () => {
       body.classList.toggle('dark');
       const isDark = body.classList.contains('dark');
-      toggleBtn.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+      toggleBtn.innerHTML = isDark ? '☀️' : '🌙';
       
       localStorage.setItem('darkMode', isDark);
     });
@@ -3270,7 +3421,7 @@
     const savedDarkMode = localStorage.getItem('darkMode');
     if (savedDarkMode === 'true') {
       body.classList.add('dark');
-      toggleBtn.innerHTML = '☀️ Light';
+      toggleBtn.innerHTML = '☀️';
     }
   }
 
