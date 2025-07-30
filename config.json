@@ -8,8 +8,8 @@
   },
   "navigation": {
     "darkModeToggle": {
-      "light": "🌙 Dark",
-      "dark": "☀️ Light"
+      "light": "🌙",
+      "dark": "☀️"
     },
     "languages": [
       {"code": "en", "name": "English"},

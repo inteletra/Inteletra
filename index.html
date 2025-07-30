@@ -193,6 +193,37 @@
 <!-- Google Analytics (Replace GA_MEASUREMENT_ID with your actual ID) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 <script>
+  // Hamburger menu close logic
+  function initializeHamburgerMenuClose() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const headerNav = document.querySelector('.header-nav');
+    const navLinks = document.querySelectorAll('.header-nav .nav-link');
+    const menuIcon = document.querySelector('.menu-icon');
+
+    // Close menu when a nav link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (menuToggle && menuToggle.checked) menuToggle.checked = false;
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!headerNav || !menuToggle) return;
+      const isMenu = headerNav.contains(e.target) || (menuIcon && menuIcon.contains(e.target)) || (e.target === menuToggle);
+      if (!isMenu && menuToggle.checked) {
+        menuToggle.checked = false;
+      }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuToggle && menuToggle.checked) {
+        menuToggle.checked = false;
+      }
+    });
+  }
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -3659,6 +3690,8 @@
 
   // Initialize the application
   loadConfig();
+  // Initialize hamburger menu close logic
+  document.addEventListener('DOMContentLoaded', initializeHamburgerMenuClose);
 
   // Additional safety: Set hero title on DOMContentLoaded
   document.addEventListener('DOMContentLoaded', function() {
