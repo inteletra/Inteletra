@@ -62,7 +62,7 @@
 
     @media (max-width: 834px) {
       .header-content {
-        padding: 0;
+        padding: 0 !important;
       }
 
       .header-nav {
@@ -79,7 +79,7 @@
         max-width: 100vw;
         box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
         z-index: 1100;
-        display: none;
+        display: none !important;
       }
 
       .header-nav .nav-link {
@@ -107,7 +107,7 @@
       }
 
       .menu-toggle-index:checked~.header-nav {
-        display: flex;
+        display: flex !important;
       }
 
       .header-controls {
@@ -432,7 +432,7 @@
     .rtl .logo {
       direction: rtl;
       text-align: right;
-      padding-left
+      padding-left: 1rem;
     }
 
     /* Apple-inspired Header Controls */
@@ -1022,36 +1022,6 @@
   </footer>
 
   <script>
-    // Hamburger menu close logic for responsive header
-    function initializeHamburgerMenuClose() {
-      const menuToggleIndex = document.getElementById('menu-toggle-index');
-      const headerNav = document.querySelector('.header-nav');
-      const navLinks = document.querySelectorAll('.header-nav .nav-link');
-      const menuIcon = document.querySelector('.menu-icon');
-
-      // Close menu when a nav link is clicked
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          if (menuToggleIndex && menuToggleIndex.checked) menuToggleIndex.checked = false;
-        });
-      });
-
-      // Close menu when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!headerNav || !menuToggleIndex) return;
-        const isMenu = headerNav.contains(e.target) || (menuIcon && menuIcon.contains(e.target)) || (e.target === menuToggleIndex);
-        if (!isMenu && menuToggleIndex.checked) {
-          menuToggleIndex.checked = false;
-        }
-      });
-
-      // Close menu on Escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && menuToggleIndex && menuToggleIndex.checked) {
-          menuToggleIndex.checked = false;
-        }
-      });
-    }
     // Blog configuration - matches the main config structure
     const blogConfig = {
       "navigation": {
@@ -1162,6 +1132,7 @@
       initializeAIParticles();
       initializeDarkMode();
       initializeBlogLanguageSystem(); // Use new language system instead of Google Translate
+      initializeLanguageSelector(); // Add language selector event listener
       initializeNavigation();
       handleURLRouting();
     }
@@ -1330,12 +1301,26 @@
         const blogTitle = document.getElementById('blog-title');
         const blogSubtitle = document.getElementById('blog-subtitle');
         const backToBlogBtn = document.getElementById('back-to-blog-btn');
+        
+        // Update navigation buttons
+        const navAbout = document.getElementById('nav-about');
+        const navBlog = document.getElementById('nav-blog');
 
         if (blogTitle) blogTitle.textContent = configData.blog.title;
         if (blogSubtitle) blogSubtitle.textContent = configData.blog.subtitle;
         if (backToBlogBtn && configData.navigation) {
           backToBlogBtn.textContent = configData.navigation.backToBlog;
           console.log('Updated back to blog button to:', configData.navigation.backToBlog);
+        }
+        
+        // Update navigation button texts based on language
+        if (navAbout) {
+          navAbout.textContent = (langCode === 'ar') ? 'من نحن' : 'About Us';
+          console.log('Updated About Us button to:', navAbout.textContent);
+        }
+        if (navBlog) {
+          navBlog.textContent = (langCode === 'ar') ? 'المدونة' : 'Blog';
+          console.log('Updated Blog button to:', navBlog.textContent);
         }
 
         // Update the global blogConfig completely
@@ -1392,6 +1377,20 @@
       // Load the appropriate language config
       loadBlogLanguageConfig(langCode);
     };
+
+    // Add event listener for language selector
+    function initializeLanguageSelector() {
+      const langSelect = document.getElementById('lang');
+      if (langSelect) {
+        langSelect.addEventListener('change', function(e) {
+          console.log('Language selector changed to:', e.target.value);
+          switchBlogLanguage(e.target.value);
+        });
+        console.log('Language selector event listener added');
+      } else {
+        console.error('Language selector not found');
+      }
+    }
 
     // Function to navigate to home with preserved language
     window.navigateToHome = function () {
@@ -1699,10 +1698,17 @@
     function initializeHamburgerMenu() {
       const menuToggleIndex = document.getElementById('menu-toggle-index');
       const menuIcon = document.querySelector('.menu-icon');
-      const header = document.querySelector('header');
+      const headerNav = document.querySelector('.header-nav');
+      const navLinks = document.querySelectorAll('.header-nav .nav-link');
+
+      if (!menuToggleIndex || !menuIcon || !headerNav) {
+        console.error('Required menu elements not found');
+        return;
+      }
 
       // Reset toggle state on initialization
-      if (menuToggleIndex) menuToggleIndex.checked = false;
+      menuToggleIndex.checked = false;
+      console.log('Hamburger menu initialized');
 
       // Handle menu icon click
       menuIcon.addEventListener('click', (event) => {
@@ -1714,10 +1720,13 @@
 
       // Close menu when clicking outside
       document.addEventListener('click', (event) => {
-        const isMenuIcon = menuIcon.contains(event.target);
-        const isMenuToggle = event.target === menuToggleIndex;
-
-        if (!isMenuIcon && !isMenuToggle && menuToggleIndex.checked) {
+        if (!headerNav || !menuToggleIndex) return;
+        
+        const isMenu = headerNav.contains(event.target) ||
+                      menuIcon.contains(event.target) ||
+                      event.target === menuToggleIndex;
+        
+        if (!isMenu && menuToggleIndex.checked) {
           menuToggleIndex.checked = false;
           console.log('Menu closed from outside click');
         }
@@ -1725,15 +1734,19 @@
 
       // Close menu on Escape key
       document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && menuToggleIndex.checked) {
+        if (event.key === 'Escape' && menuToggleIndex && menuToggleIndex.checked) {
           menuToggleIndex.checked = false;
+          console.log('Menu closed with Escape key');
         }
       });
 
       // Close menu when clicking a nav link
-      document.querySelectorAll('.nav-link').forEach(link => {
+      navLinks.forEach(link => {
         link.addEventListener('click', () => {
-          menuToggleIndex.checked = false;
+          if (menuToggleIndex && menuToggleIndex.checked) {
+            menuToggleIndex.checked = false;
+            console.log('Menu closed after nav link click');
+          }
         });
       });
     }
@@ -1742,7 +1755,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       initializeBlog();
       initializeHamburgerMenu();
-      // initializeHamburgerMenuClose();
     });
   </script>
 </body>
