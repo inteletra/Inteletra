@@ -40,66 +40,16 @@
   <meta property="twitter:description"
     content="AI-powered property platform for smart property search in Dubai, Abu Dhabi, Sharjah. Plus intelligent legal assistant for UAE law guidance." />
   <meta property="twitter:image" content="https://inteletraai.com/twitter-image.jpg" />
-  <!-- Enhanced Google Analytics 4 (GA4) with Device & OS Detection -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QRS04ZWBT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QRS04ZWBT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    // Get device type
-    function getDeviceType() {
-      const ua = navigator.userAgent;
-      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-        return 'tablet';
-      }
-      if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-        return 'mobile';
-      }
-      return 'desktop';
-    }
-
-    // Get OS
-    function getOperatingSystem() {
-      const userAgent = window.navigator.userAgent,
-            platform = window.navigator.platform,
-            macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-            windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-            iosPlatforms = ['iPhone', 'iPad', 'iPod'];
-
-      if (macosPlatforms.indexOf(platform) !== -1) {
-        return 'MacOS';
-      } else if (iosPlatforms.indexOf(platform) !== -1) {
-        return 'iOS';
-      } else if (windowsPlatforms.indexOf(platform) !== -1) {
-        return 'Windows';
-      } else if (/Android/.test(userAgent)) {
-        return 'Android';
-      } else if (/Linux/.test(platform)) {
-        return 'Linux';
-      }
-
-      return 'Unknown OS';
-    }
-
-    // Configure GA4 with custom dimensions
-    gtag('config', 'G-7QRS04ZWBT', {
-      'custom_map': {
-        'dimension1': 'device_type',
-        'dimension2': 'operating_system',
-        'dimension3': 'screen_resolution'
-      }
-    });
-
-    // Send device and OS information
-    gtag('event', 'device_info', {
-      'device_type': getDeviceType(),
-      'operating_system': getOperatingSystem(),
-      'screen_resolution': `${window.screen.width}x${window.screen.height}`
-    });
-  </script>
- 
-
+  gtag('config', 'G-7QRS04ZWBT');
+</script>  
+  
   <!-- Enhanced Structured Data for SEO -->
   <script type="application/ld+json">
 {
