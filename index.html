@@ -2030,6 +2030,47 @@
       transform: translateX(5px);
     }
 
+    /* Product Link */
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--apple-blue) 0%, #0056CC 100%);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 12px 24px;
+      font-family: var(--apple-font-text);
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+      margin-top: 16px;
+    }
+
+    .product-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 122, 255, 0.3);
+      background: linear-gradient(135deg, #0056CC 0%, var(--apple-blue) 100%);
+    }
+
+    .product-link:active {
+      transform: translateY(0px);
+      box-shadow: 0 2px 8px rgba(0, 122, 255, 0.4);
+    }
+
+    .dark .product-link {
+      background: linear-gradient(135deg, var(--apple-blue) 0%, #0066FF 100%);
+      box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+    }
+
+    .dark .product-link:hover {
+      background: linear-gradient(135deg, #0066FF 0%, var(--apple-blue) 100%);
+      box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+    }
+
     /* FAQ Section */
     .faq {
       padding: var(--spacing-3xl) 0;
@@ -2595,6 +2636,7 @@
                 best prices and helps sellers find qualified buyers. Advanced algorithms analyze market data, property
                 features, and user preferences for optimal matches across Dubai, Abu Dhabi, and Sharjah.
               </p>
+              <a href="https://propsnapuae.inteletraai.com/" target="_blank" rel="noopener noreferrer" class="product-link" aria-label="Visit AI Property Intelligence Platform">Visit Platform →</a>
             </div>
           </article>
           <article class="product-panel slide-in-right" aria-labelledby="product2-title" itemscope
